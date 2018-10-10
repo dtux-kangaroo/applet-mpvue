@@ -12,7 +12,7 @@
 
 <script>
 // Use Vuex
-import store from './store';
+import store from '@/store';
 
 export default {
   computed: {
@@ -31,7 +31,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .counter-warp {
   text-align: center;
   margin-top: 100px;

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div>{{count}}</div>
     <ul class="container log-list">
       <li v-for="(log, index) in logs" :class="{ red: aa }" :key="index" class="log-item">
         <card :text="(index + 1) + ' . ' + log"></card>
@@ -11,12 +12,17 @@
 <script>
 import { formatTime } from '@/utils/index';
 import card from '@/components/card';
+import store from '@/store';
 
 export default {
   components: {
     card,
   },
-
+  computed: {
+    count() {
+      return store.state.count;
+    },
+  },
   data() {
     return {
       logs: [],
@@ -30,14 +36,15 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .log-list {
   display: flex;
   flex-direction: column;
   padding: 40rpx;
+  .log-item {
+    margin: 10rpx;
+  }
 }
 
-.log-item {
-  margin: 10rpx;
-}
+
 </style>
