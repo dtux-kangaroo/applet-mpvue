@@ -1,0 +1,65 @@
+@import './variable.scss';
+.color-primary{
+  color: $color-primary;
+}
+.color-success{
+  color: $color-success;
+}
+.color-warning{
+  color: $color-warning;
+}
+.color-error{
+  color: $color-error
+}
+
+.mt-5{
+  margin-top: 5px;
+}
+.mt-10{
+  margin-top: 10px;
+}
+.mt-20{
+  margin-top: 20px;
+}
+.mt-30{
+  margin-top: 20px;
+}
+
+.mr-5{
+  margin-right: 5px;
+}
+.mr-10{
+  margin-right: 10px;
+}
+.mr-20{
+  margin-right: 20px;
+}
+.mr-30{
+  margin-right: 30px;
+}
+
+.mb-5{
+  margin-bottom: 5px;
+}
+.mb-10{
+  margin-bottom: 10px;
+}
+.mb-20{
+  margin-bottom: 20px;
+}
+.mb-30{
+  margin-bottom: 30px;
+}
+
+.ml-5{
+  margin-left: 5px;
+}
+.ml-10{
+  margin-left: 10px;
+}
+.ml-20{
+  margin-left: 20px;
+}
+.ml-30{
+  margin-left: 30px;
+}
