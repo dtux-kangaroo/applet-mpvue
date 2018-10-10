@@ -15,10 +15,11 @@
     </div>
 
     <form class="form-container">
-      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
+      <input type="text" class="form-control color-success" v-model="motto" placeholder="v-model" />
       <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
     </form>
     <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
+    <roo-button type="primary">原生组件库的按钮</roo-button>
   </div>
 </template>
 
@@ -62,11 +63,14 @@ export default {
   created() {
     // 调用应用实例的方法获取全局数据
     this.getUserInfo();
+    this.API.fetchOrderList().then((response) => {
+      console.log(response);
+    });
   },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -87,13 +91,15 @@ export default {
 .usermotto {
   margin-top: 150px;
 }
-
-.form-control {
-  display: block;
-  padding: 0 12px;
-  margin-bottom: 5px;
-  border: 1px solid #ccc;
+.form-container{
+  .form-control {
+    display: block;
+    padding: 0 12px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+  }
 }
+
 
 .counter {
   display: inline-block;
