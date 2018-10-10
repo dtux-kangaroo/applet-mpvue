@@ -6,6 +6,7 @@ var vueLoaderConfig = require('./vue-loader.conf')
 var MpvuePlugin = require('webpack-mpvue-asset-plugin')
 var glob = require('glob')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
+var LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 var relative = require('relative')
 
 function resolve (dir) {
@@ -109,6 +110,7 @@ module.exports = {
         to: path.resolve(__dirname, '../dist/static'),
         ignore: ['.*']
       }
-    ])
+    ]),
+    new LodashModuleReplacementPlugin()
   ]
 }

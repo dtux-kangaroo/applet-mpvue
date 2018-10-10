@@ -1,6 +1,7 @@
 import http from '@/utils/http'
 import totalConfig from '../../config'
-const config = process.env === 'development' ? totalConfig.dev : totalConfig.build
+import _ from 'lodash'
+const config = process.env.NODE_ENV === 'development' ? totalConfig.dev : totalConfig.build
 
 const API_URL = {
   //获取订单列表
@@ -12,7 +13,8 @@ const API_URL = {
 
 const API = {}
 
-Object.keys(API_URL).forEach(key=>{
+
+_.keys(API_URL).forEach(key=>{
   const item = API_URL[key];
   switch(item.method){
     case 'GET':
